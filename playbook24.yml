@@ -1,0 +1,15 @@
+    - name: Check if file is executable if so delete it
+      hosts: all
+      tasks:
+        - name: check if file is executable
+          stat:
+            path: /home/ubuntu/f1
+          register: results
+        - name: display the output
+          debug:
+            var: results
+        - name: delet the file if it is executable
+          file:
+            name: /home/ubuntu/f1
+            state: absent
+          when: results.stat.executable == true

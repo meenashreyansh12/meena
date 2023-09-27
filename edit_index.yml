@@ -1,0 +1,4 @@
+- name: Edit the index.yml
+  copy:
+    content: "Hello"
+    dest: /var/www/html/index.html

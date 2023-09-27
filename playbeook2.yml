@@ -1,0 +1,6 @@
+---
+- name: install jenkins through script file
+  hosts: all
+  tasks:
+    - name: excute file
+      shell: sh file.sh

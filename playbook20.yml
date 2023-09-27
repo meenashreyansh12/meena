@@ -1,0 +1,8 @@
+ - name: create user
+   hosts: all
+   tasks:
+     - name: user creation
+       user:
+         name: meena
+         password: intelliqit
+         

@@ -1,0 +1,9 @@
+ - name: Using host scope variables
+   hosts: webserver
+   tasks:
+     - name: install firewall
+       apt:
+         name: "{{a}}"
+         state: "{{b}}"
+         update_cache: "{{c}}"
+

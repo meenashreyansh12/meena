@@ -1,0 +1,21 @@
+  - name: Error Handling or Exception Handling
+    hosts: all
+    tasks:
+      - block:
+          - name: install uisng apt
+            apt:
+              name: git
+              state: present
+              update_cache: yes
+        rescue:
+          - name: install using yum
+            yum: 
+              name: git
+              status: present
+              update_cache: yes
+        always:
+          - name: display success msg
+            debug: 
+              msg: "Git installation successful" 
+  
+

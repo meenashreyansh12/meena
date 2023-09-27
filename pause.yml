@@ -1,0 +1,3 @@
+- name: pause apache2
+  pause:
+    seconds: 30
